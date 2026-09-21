@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تعلم الإنجليزية للأطفال</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="app" class="app-container">
+        <!-- Header with title and language toggle -->
+        <header class="app-header">
+            <h1 class="app-title" id="appTitle">تعلم الإنجليزية</h1>
+            <button id="langToggle" class="lang-toggle" onclick="toggleLanguage()">
+                <span id="langText">EN</span>
+            </button>
+        </header>
+
+        <!-- Home Screen - displays 8 unit cards -->
+        <main id="homeScreen" class="screen home-screen">
+            <div class="units-grid" id="unitsGrid">
+                <!-- Unit cards populated by JavaScript -->
+            </div>
+        </main>
+
+        <!-- Unit Learning Screen -->
+        <main id="unitScreen" class="screen unit-screen" style="display: none;">
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <span class="progress-text" id="progressText">0/6</span>
+            </div>
+
+            <!-- Unit Title -->
+            <h2 class="unit-title" id="unitTitle"></h2>
+
+            <!-- Word Display Area -->
+            <div class="word-display" id="wordDisplay">
+                <div class="word-image" id="wordImage"></div>
+                <h3 class="word-title" id="wordTitle"></h3>
+            </div>
+
+            <!-- Listen Button -->
+            <button id="listenBtn" class="btn btn-primary listen-btn">
+                <span class="btn-icon">🔊</span>
+                <span id="listenText">استمع</span>
+            </button>
+
+            <!-- Options Grid (3 buttons) -->
+            <div class="options-grid" id="optionsGrid">
+                <button class="option-btn" data-index="0"></button>
+                <button class="option-btn" data-index="1"></button>
+                <button class="option-btn" data-index="2"></button>
+            </div>
+        </main>
+
+        <!-- Celebration Modal -->
+        <div id="celebrationModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <div class="celebration-star"></div>
+                <h2 class="celebration-title" id="celebrationTitle">أحسنت!</h2>
+                <p class="celebration-score" id="celebrationScore"></p>
+                <button id="nextUnitBtn" class="btn btn-primary">
+                    <span id="nextUnitText">الوحدة التالية</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Cartoon Character (Star SVG) -->
+        <div class="cartoon-character" id="cartoonCharacter">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="50,5 61,35 98,35 68,57 79,95 50,75 21,95 32,57 2,35 39,35" fill="#FFE66D" stroke="#FF9F43" stroke-width="2"/>
+                <circle cx="38" cy="42" r="6" fill="#333"/>
+                <circle cx="62" cy="42" r="6" fill="#333"/>
+                <circle cx="40" cy="40" r="2" fill="#FFF"/>
+                <circle cx="64" cy="40" r="2" fill="#FFF"/>
+                <path d="M43 58 Q50 65 57 58" stroke="#333" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/speech.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
